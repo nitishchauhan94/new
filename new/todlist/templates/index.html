@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+{#    <div class= 'col-sm-6 '>#}
+    <title>Title</title><h1> Daily Shifts</h1>
+
+<div class="container  col-sm-6 ">
+{% for obj in object_list %}
+{#{% url "shift:detail" id=obj.id %}#}
+    <div class="list-group">
+    <a href='{{ obj.get_absolute_url }}' class="list-group-item active">Date:-{{ obj.Date }}</a>
+        <a class="list-group-item">Day:-{{ obj.Day }}</a>
+    <a class="list-group-item">Morning Shift:-{{ obj.Morning }}</a>
+    <a class="list-group-item">Evening Shift:-{{ obj.Evening }}</a>
+    <a class="list-group-item">General Shift:-{{ obj.General }}</a>
+    </div>
+{% endfor %}
+
+    </div>
+</div>
+{% endblock content %}
